@@ -8,6 +8,5 @@ lib-cov
 *.gz
 
 logs
-.meteor
 
 npm-debug.log
