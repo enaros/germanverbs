@@ -1,0 +1,21 @@
+<head>
+  <title>German verb form</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  {{> searchbox}}
+  {{> results}}
+</body>
+
+<template name="searchbox">
+  <form><input type='text' value='gehen' /> <br/></form>
+</template>
+
+<template name="results">
+  <!-- <h1>{{{word.name}}}</h1> -->
+  <h2>{{{word.description}}}</h2>
+  <h3>{{{word.description2}}}</h3>
+  <p>{{{word.indikativ.simplepresent}}}</p>
+</template>
