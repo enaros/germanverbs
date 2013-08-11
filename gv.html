@@ -21,18 +21,22 @@
   <!-- <h1>{{{word.name}}}</h1> -->
   <h2>{{{word.description}}}</h2>
   <h3>{{{word.description2}}}</h3>
-  <p>{{{word.indikativ.simplepresent}}}</p>
+  <div class='tenses'>
+    {{#each word.indikativ}}
+      {{{this}}}
+    {{/each}}
+  </div>
 </template>
 
 <template name="sidebar">
   <div class="snap-drawers">
-    <div class="snap-drawer snap-drawer-left">
-      <nav id='menu'>
-        <a href='#'>hola</a>
-        <a href='#'>hola</a>
-        <a href='#'>hola</a>
-        <a href='#'>hola</a>
-      </nav>
-    </div>
+    <nav class="snap-drawer snap-drawer-left">
+      <ul class ='list' id='menu'>
+        <li><a href='#'>Simple Present</a></li>
+        <li><a href='#'>Simple Past</a></li>
+        <li><a href='#'>Present Perfect</a></li>
+        <li><a href='#'>Past Perfekt</a></li>
+      </ul>
+    </nav>
   </div>
 </template>

@@ -19,5 +19,9 @@ Meteor.methods
 		name: $(verb[0]).html()
 		description: $(verb[1]).html()
 		description2: $(verb[2]).html()
-		indikativ:
-			simplepresent: $(indikativ[0]).html()
+		indikativ: [
+			$(indikativ[0]).html()
+			$(indikativ[1]).html()
+			$(indikativ[2]).html()
+			$(indikativ[3]).html()
+		]
