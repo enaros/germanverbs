@@ -8,4 +8,8 @@ Template.searchbox.events
 Template.results.word = ->
 	Session.get('word')
 
-Meteor.startup -> $('input').select()
+Meteor.startup -> 
+	$('input').select()
+	snapper = new Snap
+		element: document.getElementById('content')
+		disable: 'right'

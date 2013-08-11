@@ -1,12 +1,16 @@
 <head>
   <title>German verb form</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-  {{> searchbox}}
-  {{> results}}
+  {{> sidebar}}
+  <div id='content' class="snap-content">
+    {{> searchbox}}
+    {{> results}}
+  </div>
 </body>
 
 <template name="searchbox">
@@ -18,4 +22,17 @@
   <h2>{{{word.description}}}</h2>
   <h3>{{{word.description2}}}</h3>
   <p>{{{word.indikativ.simplepresent}}}</p>
+</template>
+
+<template name="sidebar">
+  <div class="snap-drawers">
+    <div class="snap-drawer snap-drawer-left">
+      <nav id='menu'>
+        <a href='#'>hola</a>
+        <a href='#'>hola</a>
+        <a href='#'>hola</a>
+        <a href='#'>hola</a>
+      </nav>
+    </div>
+  </div>
 </template>
