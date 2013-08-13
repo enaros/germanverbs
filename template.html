@@ -1,0 +1,54 @@
+<head>
+  <title>German verb form</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  {{>main}}
+</body>
+
+<template name="main">
+  {{> sidebar}}
+  <div id='content' class="snap-content" style="background-image:url({{imgurl}})">
+    {{> searchbox}}
+    {{> results}}
+  </div>
+</template>
+
+<template name="searchbox">
+  {{#constant}}<form><input type='text' value='gehen' /> <br/></form>{{/constant}}
+</template>
+
+<template name="results">
+  <!-- <h1>{{{word.name}}}</h1> -->
+  <h2>{{{word.description}}}</h2>
+  <h3>{{{word.description2}}}</h3>
+  <div class='tenses'>
+    {{#each word.indikativ}}
+      {{{this}}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="sidebar">
+  <div class="snap-drawers">
+    <nav class="snap-drawer snap-drawer-left">
+      <ul class='{{display}} list' id='menu'>
+        <li><a href='#'>Simple Present</a></li>
+        <li><a href='#'>Simple Past</a></li>
+        <li><a href='#'>Present Perfect</a></li>
+        <li><a href='#'>Past Perfekt</a></li>
+        <li><a href='#'>Simple Futur</a></li>
+        <li><a href='#'>Futur Perfect</a></li>
+      </ul>
+      <ul class='list' id='menu-type'>
+        <li>
+          <div class='{{active "WORD"}}'>WORD</div>
+          <div class='{{active "VERB"}}'>VERB</div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</template>

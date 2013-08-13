@@ -16,10 +16,17 @@ input {
 	text-shadow: 1px 1px #ccc;
 }
 
-h1, h2, h3 {
+h1, h2, h3:not(:empty) {
 	text-align: center;
-	margin: 8px 0;
-	padding: 0;
+	padding: 8px 0;
+	margin: 0;
+	background-color: rgba(255,255,255,.7);
+	font-weight: normal;
+}
+
+h2 span:not(.stammform) {
+	color: #777;
+	font-size: 0.8em;
 }
 
 strong.stammform {
@@ -41,10 +48,16 @@ table .text_kategorie {
 	margin-bottom: 15px;
 }
 
+form { background: #fff }
+
 tr, td { border:0; }
 
 #content {
 	background: #fff;
+	background-size: contain;
+	background-position-x: 50%;
+	background-position-y: 51px;
+	background-repeat: no-repeat;
 }
 
 .tenses > table {

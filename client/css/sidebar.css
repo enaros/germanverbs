@@ -2,13 +2,21 @@ nav {
 	border-right: 1px solid #222;
 	background: #292929;
 }
+
+nav * {
+	text-decoration: none;
+	color: #ddd;
+	font-weight: normal;
+	font-family: helvetica;
+	font-size: 0.95em;
+}
 nav a {
 	display: block;
 	padding: 10px 20px;
-	/*border-bottom: 1px solid #222;*/
 	text-decoration: none;
-	color: #fff;
-	font-weight: normal;
+	color: #ddd;
+	text-shadow: 2px 2px #000;
+	/*border-bottom: 1px solid #222;*/
 }
 
 nav li:not(:last-child) {
@@ -24,3 +32,14 @@ nav a:active, nav a:hover {
 
 nav ul { margin: 0; padding:0; }
 nav ul li { list-style: none }
+
+#menu-type {
+	position: fixed;
+	bottom: 0;
+	width: 200px;
+	border-top: solid 1px #212121;
+}
+#menu-type div { width:50%; float: left; text-align: center; padding: 12px 0; border-top: solid 1px #343434; cursor: pointer; }
+#menu-type div.active { background: #111; text-shadow: 2px 2px #000; color: #fff; }
+
+.hide { display: none; }

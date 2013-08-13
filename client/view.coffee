@@ -5,7 +5,8 @@ Handlebars.registerHelper "hola", (op,a,b,c) ->
 
 Template.searchbox.events
 	'submit form': (e, t) ->
-		Meteor.call 'search', $(t.findAll 'input').val(), (err, result) ->
+		method = if Session.get('type') is 'WORD' then 'searchWord' else 'search'
+		Meteor.call method, $(t.findAll 'input').val(), (err, result) ->
 			console.log result
 			Session.set 'word', result
 		return false
@@ -21,9 +22,16 @@ Template.sidebar.events
 		window.snapper.close()
 		return false
 
+	'click #menu-type div': (e, t) ->
+		Session.set "type", $(e.currentTarget).text()
+		$('input').focus()
+		window.snapper.close()
 
 
 Template.results.word = -> Session.get('word')
+Template.main.imgurl = -> Session.get('word')?.json?.responseData.results[0].url
+Template.sidebar.active = (cual) -> return 'active' if Session.get('type') is cual
+Template.sidebar.display = -> return 'hide' if Session.get('type') is 'WORD'
 
 Meteor.startup -> 
 	# $('input').select()
