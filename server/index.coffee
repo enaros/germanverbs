@@ -1,6 +1,6 @@
 Meteor.methods
 	search: (word) ->
-		result = Meteor.http.get("http://www.verbformen.com/conjugation/" + word + ".htm", { headers: { "Content-Type": "text/html; charset=utf-8" } })
+		result = Meteor.http.get("http://www.verbformen.com/conjugation/" + word + ".htm", { encoding: 'base64', headers: { "Content-Type": "text/html; charset=utf-8" } })
 		
 		return false if result.statusCode isnt 200
 
@@ -14,10 +14,10 @@ Meteor.methods
 		# 	r.push($(elem).text().trim())
 
 
-		console.log $.html()
+		# console.log $.html()
 		
 		name: $(verb[0]).html()
-		description: $(verb[1]).html()
+		description: $(verb[1]).html().toString("utf8")
 		description2: $(verb[2]).html()
 		indikativ: [
 			$(indikativ[0]).html()

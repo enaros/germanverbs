@@ -1,6 +1,6 @@
 nav {
 	border-right: 1px solid #222;
-	background: #333;
+	background: #292929;
 }
 nav a {
 	display: block;
@@ -9,6 +9,13 @@ nav a {
 	text-decoration: none;
 	color: #fff;
 	font-weight: normal;
+}
+
+nav li:not(:last-child) {
+	border-bottom: solid 1px #212121;
+}
+nav li:not(:first-child) {
+	border-top: solid 1px #343434;
 }
 
 nav a:active, nav a:hover {

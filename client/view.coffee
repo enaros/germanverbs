@@ -17,7 +17,8 @@ Template.sidebar.events
 			if $(this).text().trim() is $(e.currentTarget).text()
 				node = @
 		node = $(node).parents('table')
-		node.show().siblings().hide()
+		node.siblings(':visible').fadeOut(->node.fadeIn())
+		window.snapper.close()
 		return false
 
 
@@ -26,7 +27,7 @@ Template.results.word = -> Session.get('word')
 
 Meteor.startup -> 
 	# $('input').select()
-	snapper = new Snap
+	window.snapper = new Snap
 		element: document.getElementById('content')
 		disable: 'right'
 		maxPosition: 201
