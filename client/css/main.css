@@ -7,6 +7,11 @@ body, html {
 	font-family: 'Vollkorn', serif;
 }
 
+*:not(input) {
+	-webkit-user-select: none;
+	user-select: none;
+}
+
 input {
 	border: 0;
 	border-bottom:1px solid #ccc;
@@ -54,7 +59,7 @@ tr, td { border:0; }
 
 #content {
 	background: #fff;
-	background-size: contain;
+	/*background-size: contain;*/
 	background-position-x: 50%;
 	background-position-y: 51px;
 	background-repeat: no-repeat;

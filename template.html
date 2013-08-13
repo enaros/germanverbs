@@ -23,6 +23,9 @@
 
 <template name="results">
   <!-- <h1>{{{word.name}}}</h1> -->
+  {{#if word.error}}
+    <h3><i>not found</i> ☹</h3>
+  {{/if}}
   <h2>{{{word.description}}}</h2>
   <h3>{{{word.description2}}}</h3>
   <div class='tenses'>

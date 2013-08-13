@@ -8,7 +8,10 @@ Template.searchbox.events
 		method = if Session.get('type') is 'WORD' then 'searchWord' else 'search'
 		Meteor.call method, $(t.findAll 'input').val(), (err, result) ->
 			console.log result
-			Session.set 'word', result
+			if result is undefined
+				Session.set 'word', error: true	
+			else
+				Session.set 'word', result
 		return false
 
 Template.sidebar.events
@@ -29,7 +32,7 @@ Template.sidebar.events
 
 
 Template.results.word = -> Session.get('word')
-Template.main.imgurl = -> Session.get('word')?.json?.responseData.results[0].url
+Template.main.imgurl = -> Session.get('word')?.img
 Template.sidebar.active = (cual) -> return 'active' if Session.get('type') is cual
 Template.sidebar.display = -> return 'hide' if Session.get('type') is 'WORD'
 
