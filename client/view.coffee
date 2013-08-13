@@ -24,7 +24,7 @@ Template.sidebar.events
 
 	'click #menu-type div': (e, t) ->
 		Session.set "type", $(e.currentTarget).text()
-		$('input').focus()
+		Session.set 'openKeyboard', true
 		window.snapper.close()
 
 
@@ -39,3 +39,8 @@ Meteor.startup ->
 		element: document.getElementById('content')
 		disable: 'right'
 		maxPosition: 201
+
+	window.snapper.on 'animated', ->
+	  if Session.get 'openKeyboard'
+	  	$('input').focus()
+	  	Session.set 'openKeyboard', false
